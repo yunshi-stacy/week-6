@@ -6,6 +6,7 @@ body {
 
 .section-main {
   padding: 100px 0;
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -13,9 +14,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-main h1 {
-  font-size: 80px;
+  font-size: 60px;
   margin-bottom: 0;
-  text-transform: uppercase;
 }
 
 .section-main h2 {
@@ -24,19 +24,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-main {
-  text-align: center;
+
 }
 
 .section-features {
   background-color: #eee;
+  text-align: center;
 }
 
 .section-features h3 {
-  text-transform: uppercase;
-}
-
-.section-features h3, .section-features h4, .section-features .featured-image {
-  text-align: center;
+  max-width: 430px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
 }
 
 .button {
@@ -47,10 +47,15 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 4px;
   color: #fff;
   background-color: #666666;
-  text-transform: uppercase;
   width: 260px;
 }
 
 .button-primary {
-  background-color: #0dc4a3;
+  background-color: #4CAF50;
+}
+
+.hero-image {
+  width: 200px;
+  height: 100px;
+  background-color: #ccc;
 }
