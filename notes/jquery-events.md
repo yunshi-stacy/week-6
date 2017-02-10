@@ -53,7 +53,8 @@ that an `ajax` callback expects response text (which it can then
 parse or work with as a string) while the `event` callback expects
 something we've labelled 'event'. By design, jQuery has a standardized
 [event object](http://api.jquery.com/category/events/event-object/)
-which carries useful information about the event being fired.
+which carries useful information about the event being fired. All
+event callbacks should expect this object as their first argument.
 
 
 ## Unbinding events
