@@ -2,7 +2,7 @@ var resetMap = function() {
   _.each(myMarkers, function(marker, i) {
     map.removeLayer(marker);
   });
-  myMarkers = []; 
+  myMarkers = [];
 };
 
 var getAndParseData = function() {

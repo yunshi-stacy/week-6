@@ -6,8 +6,11 @@
 
 ### Week 4 Review & Introduction
 - Homework/lab discussion
-  - Work through week 4's lab 2, part 3
+  - Analyzing functions in terms of what they do vs what they are
+    - `return` statements
+    - `_.map` vs `_.each`
   - Thinking through asynchronous behavior
+  - Look at a solution to Week 4's lab 2, part 3
 
 ### Bringing everything together
 
