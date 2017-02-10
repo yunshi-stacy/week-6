@@ -6,27 +6,27 @@
 
 ### Week 4 Review & Introduction
 - Homework/lab discussion
-  - Work through week 3, lab 2, part 3 example
+  - Work through week 4's lab 2, part 3
   - Thinking through asynchronous behavior
 
 ### Bringing everything together
 
 ##### Section 1: HTML & CSS
 - Review box model
-- Look at developer tools
+- A closer look at developer tools
 - Live HTML & CSS coding from scratch
 - [Lab 1](lab/lab1/)
 
 ##### Section 2: jQuery Continued
 - Element selection
-  - Arguably the central jQuery feature
+  - A central feature of jQuery
   - CSS selectors
 - jQuery events
   - 'Binding' events to elements
-  - Asynchronous
+  - Asynchronous behavior (just like ajax)
 - [Lab 2](lab/lab2/)
 
-## Homework Assignment (Due: Sunday, February 21)
+## Homework Assignment (Due: Wednesday, February 15)
 
 - Complete [Labs](lab)
 - Complete [Assignment](assignment)

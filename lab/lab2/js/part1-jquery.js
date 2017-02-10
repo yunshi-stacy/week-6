@@ -18,26 +18,27 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 
   In this course, we've set our focus on HTML, CSS, & Javascript as they are useful in the construction
   of mapping applications. One thing that isn't yet clear is how to handle user input. This is difficult
-  because we've got to expand our thinking to span HTML and javascript - the fields with which
-  a users can interact are ultimately specified in HTML <input> elements. Luckily, we've already seen
-  how CSS solves this problem (with the use of selectors) and can extend that syntax into our work
-  with javascript.
+  because we've got to expand our thinking to include HTML, javascript, and their interactions - the
+  fields with which a users can interact are specified in HTML <input> elements. We've already seen
+  how CSS solves the HTML reference problem (with the use of selectors) and can extend that syntax
+  into our work with javascript.
 
   A few reminders about the basic forms of CSS selector:
-  1. The simplest selector case is specification of a tag directly. The selector "p" will grab all
+  1. The simplest selector case is specification of an element's name directly. The selector "p" will grab all
      <p> elements whereas "h1" will grab all <h1> elements.
 
-  2. An HTML tag's "class" is referenced through a prefixed period. A page that has multiple movie
+  2. An HTML element's "class" is referenced through a prefixed period. A page that has multiple movie
      div elements in which there is a title header might look like this:
      <div>
        <h4 class="movie-title"></h4>
        <div class="movie-detail"></div>
      </div>
-     On this page, ".movie-title" can be used to grab all of the tags with a "movie-title" class.
+     On this page, the selector ".movie-title" can be used to grab all of the elements with a
+     "movie-title" class.
 
-  3. An HTML tag's "id" is referenced with a hashtag. The selector "#winning" will grab the element
+  3. An HTML element's "id" is referenced with a hashtag. The selector "#winning" will grab the element
      (element is singular here - an ID should always be unique to the DOM it sits on) where
-     <tag id="winning">.
+     <element id="winning">.
      For example:
      <div>
        <p id="winning">Charlie Sheen</p>
@@ -46,38 +47,53 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 
   4. CSS selectors can be combined to refine our meaning. In the movie-title example above, we can
      find all and only h4 elements with the class "movie-title" with the selector "h4.movie-title"
-     which is, in english, "h4 elements with the class 'movie-title'".
+     which is, translated to english, "h4 elements with the class 'movie-title'".
 
   In jQuery, we use this syntax as well. It looks like this: $(*selector*); We could, for instance,
   grab all h4 movie-titles with $('h4.movie-title');
 
-  Many of the exercises in this portion of lab 2 involve reading and writing to HTML inputs with the
-  help of jQuery selectors and associated methods for querying the DOM. The method you'll use again
-  and again on this lab is jQuery's `val`. With no arguments, it queries an input value. Provided
-  a value as an argument, it will actually set that value in the HTML DOM.
+  A NOTE ON jQuery.val vs jQuery.text:
+    Many of the exercises in this portion of lab 2 involve reading and writing to HTML inputs with the
+    help of jQuery selectors and associated methods for querying the DOM. Two methods you'll use again
+    and again on this lab are jQuery's `val` and `text`. It is important that you keep in mind that
+    they do very different things.
 
-  Example:
-    Reading: $(someSelector).val();
-    Writing: $(someSelector).val(valueToSet);
+    jQuery().val():
+      With no arguments, `val` queries an input value. Provided a value as an argument, it will
+      actually set that value in the <input> element.
 
-  Task 1: Change HTML to create useful labels for our UI
+      For example:
+        Reading: $(someSelector).val();  // This gets the current value
+        Writing: $(someSelector).val(valueToSet);  // This sets the value
+
+    jQuery().text();
+      With no arguments, `val` queries an html element for its contained text (not usable to get an
+      input's value!). Provided a string as an argument, it will actually set that string as the html
+      element's new text.
+
+      For example:
+        Reading: $(someSelector).text();  // This gets the current value
+        Writing: $(someSelector).text(textToSet);  // This sets the value
+
+
+  Task 1: Using javascript, change the HTML to create useful labels for our UI
     *NOTE*: Do not edit part1-jquery.html. You should be able to change the text of an HTML element
-            with jQuery alone! Try this: $(SELECTOR).text('text to set');
+            with jQuery alone! Try this: $(<selector>).text('text to set');
 
     Let's change the labels of our input elements so that they're meaningful. We don't want the
-    page to say 'This is the first text input'. Instead we should imagine meaningful inputs and label
+    page to say 'This is the first text input'. Instead we should imagine useful inputs and label
     accordingly. Be sure that the labels you choose make sense for the element types provided. A
     checkbox has only two states: on and off. This is useful for boolean values (e.g. isDoctor,
     hasHair). Text fields allow for more complex representations (e.g. name, address). Numeric fields
-    are specialized to only allow numeric values (possible meanings include: ageInYears, pointsScored).
+    are specialized to only allow numeric values (possible interpretations include: ageInYears, pointsScored).
     The color field is specialized to use HTML5 colorpickers provided by each browser and store data
-    as a string in hexadecimal color format (i.e. '#ffffff'); suitables representations include e.g.
+    as a string in hexadecimal color format (i.e. '#ffffff'); suitable representations include e.g.
     hairColor, markerColor.
 
     Try to imagine a single object that you're describing. For example, if your object is "person",
     you might want to include a name, an address, an age, a couple of boolean characteristics, and a
     favorite color. Don't spend too much time on thinking about the perfect object to represent with
-    this form, anything will do.
+    this form, just about anything will do.
 
   Task 2: Setting (writing) input values
     *NOTE*: An input's value is not the same as an HTML element's text. We use $(selector).val() as
@@ -148,6 +164,10 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
     Use `_.isEqual` to make sure the object you feed in is the same as the one you read back out.
 ===================== */
 
+// Take note of our use of jQuery here: $(document).ready(functionToCallWhenReady)
+// This is a popular pattern that you'll run into in programs that run jQuery. It says not to run
+// the function passed to `ready` until the HTML document is fully loaded and all scripts have
+// been interpreted. It is, therefore, an example
 $(document).ready(function() {
   // Do your stuff here
 });
