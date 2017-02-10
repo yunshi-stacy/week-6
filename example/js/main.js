@@ -8,17 +8,17 @@ getAndParseData();
   ALL functions called here will be called EVERY time a click event fires
 ===================== */
 $('button#my-button').click(function(e) {
-  numericField1 = $('#num1').val();
-  console.log("numericField1", numericField1);
+  appState.numericField1 = $('#num1').val();
+  console.log("numericField1", appState.numericField1);
 
-  numericField2 = $('#num2').val();
-  console.log("numericField2", numericField2);
+  appState.numericField2 = $('#num2').val();
+  console.log("numericField2", appState.numericField2);
 
-  booleanField = $('#boolean')[0].checked;
-  console.log("booleanField", booleanField);
+  appState.booleanField = $('#boolean')[0].checked;
+  console.log("booleanField", appState.booleanField);
 
-  stringField = $('#string').val();
-  console.log("stringField", stringField);
+  appState.stringField = $('#string').val();
+  console.log("stringField", appState.stringField);
 
 
   /* =====================

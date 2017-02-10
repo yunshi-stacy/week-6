@@ -3,9 +3,14 @@
   This is where we will store our markers when they're on the map. This is a global variable that
   we can use throughout our application.
 ===================== */
-var myData;
-var myMarkers = [L.marker([39.9522, -75.1639])];
-var numericField1, numericField2, booleanField, stringField;
+var appState = {
+  "markers": [L.marker([39.9522, -75.1639])],
+  "data": undefined,
+  "numericField1": undefined,
+  "numericField2": undefined,
+  "booleanField": undefined,
+  "stringField": undefined
+};
 
 /* =====================
   Set up our map
@@ -25,5 +30,5 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 /* =====================
   Add our dummy marker to the map
 ===================== */
-_.each(myMarkers, function(marker) { marker.addTo(map); });
+_.each(appState.markers, function(marker) { marker.addTo(map); });
 
