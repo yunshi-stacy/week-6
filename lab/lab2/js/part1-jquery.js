@@ -154,7 +154,7 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
     a divIcon, you should be able to grab it by reference to its class: 'leaflet-marker-icon'. So,
     in jQuery, $('.leaflet-marker-icon').
 
-  Task 9: Make a parametric function (make it accept parameters/arguments) to fill the form out
+  Task 9: Make a parametric function (one that accepts parameters/arguments) to fill the form out.
     At this point, we have an object which corresponds to a (at least partially) filled out form.
     That being so, we should be able to write a function that accepts, as an argument,
     one of those objects and properly fills out the form to match the values of that object. Try to
@@ -167,7 +167,7 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 // Take note of our use of jQuery here: $(document).ready(functionToCallWhenReady)
 // This is a popular pattern that you'll run into in programs that run jQuery. It says not to run
 // the function passed to `ready` until the HTML document is fully loaded and all scripts have
-// been interpreted. It is, therefore, an example
+// been interpreted. It is, therefore, an example of asynchronous behavior.
 $(document).ready(function() {
   // Do your stuff here
 });
