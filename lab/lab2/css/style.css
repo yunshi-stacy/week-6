@@ -21,3 +21,8 @@ body {
     overflow-y: auto;
     padding: 20px;
 }
+
+.fancy-icon {
+    background-image: url('../radio.png');
+    background-color: red;
+}

@@ -169,5 +169,109 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 // the function passed to `ready` until the HTML document is fully loaded and all scripts have
 // been interpreted. It is, therefore, an example of asynchronous behavior.
 $(document).ready(function() {
-  // Do your stuff here
+  //Task 1
+  $('#text-label1').text('Lat');
+  $('#text-label2').text('Lon');
+  $('#text-label3').text('Description');
+  $('#number-label').text('Radius(px)');
+  $('#checkbox-label1').text('When?');
+  $('#checkbox-label2').text('Where?');
+  $('#color-label').text('Select Your Color');
+  //Task 2
+  //No default values for task 7
+  //$('#text-input1').val('39.9522');
+  $('#text-input2').val('-75.1639');
+  //$('#text-input3').val('Philadelphia');
+  $('#numeric-input').val(20);
+  $('#cbox-input1').val('checked');
+  $('#cbox-input2').val('unchecked');
+  $('#color-input').val('#ff0000');
+  //Task 3
+  var createMarker = function(){
+    var newObj = {
+      lat: $('#text-input1').val(),
+      lon: $('#text-input2').val(),
+      description: $('#text-input3').val(),
+      scale: $('#numeric-input').val(),
+      check1: $('#cbox-input1').val(),
+      check2: $('#cbox-input2').val(),
+      color: $('#color-input').val()
+    };
+    return newObj;
+  };
+  //Task 4
+  $('#text-input1').prop('disabled', false);
+  $('#text-input2').prop('disabled', false);
+  $('#text-input3').prop('disabled', false);
+  $('#numeric-input').prop('disabled', false);
+  $('#cbox-input1').prop('disabled', false);
+  $('#cbox-input2').prop('disabled', false);
+  $('#color-input').prop('disabled', false);
+  //Task 5, 6
+  $('button').click(function(){
+    var circleMarker = createMarker();
+  //Task 7
+    //I clean the inital values in the par1-jquery.html when creating these inputs.
+    _.each(circleMarker, function(fieldInput, field){
+      if(fieldInput.length === 0){
+        switch (field){
+          case 'lat':
+            circleMarker.lat = 39.96;
+            break;
+          case 'lon':
+            circleMarker.lon = -75.16;
+            break;
+          case 'description':
+            circleMarker.description = 'Philly!!!';
+            break;
+          case 'scale':
+            circleMarker.scale = 30;
+            break;
+        }
+      }
+    });
+
+    // var mapMarker = L.circle([circleMarker.lat, circleMarker.lon], circleMarker.scale, {color: circleMarker.color});
+    // mapMarker.addTo(map);
+    // mapMarker.bindPopup(circleMarker.description);
+    //Task 8: divIcon
+    var fancyIcon = L.divIcon({className: 'fancy-icon', iconSize: L.point(62,62)});
+    var fancyMarker = L.marker([circleMarker.lat, circleMarker.lon], {icon: fancyIcon})
+    .addTo(map);
+      });
+});
+// Task 9: Make a parametric function (one that accepts parameters/arguments) to fill the form out.
+//???Use `_.isEqual` to make sure the object you feed in is the same as the one you read back out.
+
+var defaultMarker = {
+    lat: 39.96,
+    lon: -75.16,
+    description: 'Philly!!!',
+    scale: 30,
+    check1: unchecked,
+    check2: unchecked,
+    color: '#ffff00'
+    };
+
+
+$('button').click(function(){
+  var circleMarker = createMarker();
+  _.each(circleMarker, function(fieldInput, field){
+    if(fieldInput.length === 0){
+      switch (field){
+        case 'lat':
+        circleMarker.lat = defaultMarker.lat;
+        break;
+        case 'lon':
+        circleMarker.lon = defaultMarker.lon;
+        break;
+        case 'description':
+        circleMarker.description = defaultMarker.description;
+        break;
+        case 'scale':
+        circleMarker.scale = defaultMarker.scale;
+        break;
+      }
+    }
+  });
 });
